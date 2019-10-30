@@ -40,9 +40,35 @@ var extensiones ={
      }
  });
 
-
-
  }
+
+
+ /*var dato="";
+function servidor(solicitud, respuesta){
+  fs.readFile('pagina.html', (error,texto)=>{
+    var arreglo_parametros=[];
+    if(solicitud.url.indexOf("?")>0){
+      var datos_url=solicitud.url.split("?");
+      arreglo_parametros=datos_url[1].split("&");
+      for (var i = arreglo_parametros.length-1; i >=0; i--){
+        var parametro=arreglo_parametros[i];
+        var datos_parametro=parametro.split("=");
+
+        dato+=datos_parametro[1];
+      }
+    }
+    else {
+      dato="";
+    }
+    console.log(datos_parametro);
+    var textoHtml=texto.toString();
+    textoHtml=textoHtml.replace("{variablecompra}",""+dato);
+    respuesta.writeHead(200,{"Content-Type":"text/html"});
+    respuesta.write(textoHtml);
+    respuesta.end();
+  });
+}*/
+
 var servidor=http.createServer(servidor); 
 servidor.listen(3000,'localhost',()=>{
 console.log("Servidor ejecutandose en el puerto 3000")
